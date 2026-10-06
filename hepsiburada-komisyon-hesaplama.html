@@ -3,83 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hepsiburada Komisyon ve Kâr Hesaplama 2026 | Satıcı Kârlılık Cetveli</title>
-  <meta name="description" content="2026 Hepsiburada komisyon oranları, işlem bedelleri, kargo ve KDV kesintilerini hesaplayarak net satış kârınızı anında görün.">
+  <title>Hepsiburada Komisyon ve Kâr Hesaplama 2026 | İşlem Bedeli Dahil</title>
+  <meta name="description" content="2026 güncel Hepsiburada kategori komisyon oranları, HepsiJet kargo ve işlem bedeli dahil net satış kârınızı hesaplayın.">
   <link rel="canonical" href="https://pazaryerihesaplama.vercel.app/hepsiburada-komisyon-hesaplama.html">
-  
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Hepsiburada Komisyon ve Kâr Hesaplama",
-    "url": "https://pazaryerihesaplama.vercel.app/hepsiburada-komisyon-hesaplama.html",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "TRY"
-    }
-  }
-  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
 
-  <!-- Navigasyon -->
-  <nav class="bg-white border-b border-slate-200 py-4 px-6 mb-8">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold text-blue-600">PazaryeriMetrik</a>
-      <div class="space-x-4 text-sm font-medium text-slate-600">
-        <a href="index.html" class="hover:text-blue-600">Ana Sayfa</a>
-        <a href="trendyol-komisyon-hesaplama.html" class="hover:text-blue-600">Trendyol</a>
-        <a href="hepsiburada-komisyon-hesaplama.html" class="text-blue-600 font-bold">Hepsiburada</a>
-        <a href="sss.html" class="hover:text-blue-600">SSS</a>
+  <!-- Navigasyon - Tüm Sayfalara Geçiş Menüsü -->
+  <nav class="bg-white border-b border-slate-200 py-4 px-6 mb-8 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <a href="index.html" class="text-xl font-extrabold text-blue-600 tracking-tight">PazaryeriMetrik</a>
+      <div class="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm font-semibold text-slate-600">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Tüm Pazaryerleri</a>
+        <a href="trendyol-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Trendyol</a>
+        <a href="hepsiburada-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg bg-orange-50 text-orange-600 font-bold">Hepsiburada</a>
+        <a href="amazon-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Amazon TR</a>
+        <a href="n11-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">n11</a>
+        <a href="sss.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">SSS</a>
       </div>
     </div>
   </nav>
 
-  <main class="max-w-5xl mx-auto px-4 space-y-10">
+  <main class="max-w-6xl mx-auto px-4 space-y-10">
     <section class="text-center space-y-2">
       <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900">Hepsiburada Komisyon ve Kâr Hesaplama (2026)</h1>
-      <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto">Hepsiburada Mağazam panelinizdeki satışlarınızın net kârlılığını, komisyon ve işlem bedeli kesintilerini kolayca hesaplayın.</p>
+      <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto">Hepsiburada Mağazam panelindeki komisyon, HepsiJet kargo ve işlem bedeli giderlerinizi hesaplayın.</p>
     </section>
 
     <!-- HESAPLAYICI -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-        <h2 class="text-lg font-bold text-slate-900 border-b pb-3">Hepsiburada Satış Verileri</h2>
-        
+        <h2 class="text-lg font-bold text-slate-900 border-b pb-3">Hepsiburada Satış Detayları</h2>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Hepsiburada Kategorisi Seçin</label>
+          <select id="categorySelect" onchange="applyCategoryRate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-slate-50 font-medium">
+            <option value="20">Moda & Tekstil (%20)</option>
+            <option value="18">Ev, Yaşam & Mutfak (%18)</option>
+            <option value="17">Kozmetik & Sağlık (%17)</option>
+            <option value="15">Anne & Bebek (%15)</option>
+            <option value="12">Elektronik Aksesuar (%12)</option>
+            <option value="7">Bilgisayar & Donanım (%7)</option>
+            <option value="custom">Özel Komisyon Gir</option>
+          </select>
+        </div>
+
         <div>
           <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Adı / Stok Kodu</label>
-          <input type="text" id="productName" placeholder="Örn: Hepsiburada Özel Ürün" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <input type="text" id="productName" placeholder="Örn: Hepsiburada Ürün" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Maliyeti (TL)</label>
-            <input type="number" id="costPrice" value="100" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <input type="number" id="costPrice" value="120" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">Hepsiburada Satış Fiyatı (TL)</label>
-            <input type="number" id="sellPrice" value="250" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Satış Fiyatı (TL)</label>
+            <input type="number" id="sellPrice" value="300" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block text-xs font-semibold text-slate-600 mb-1">Komisyon Oranı (%)</label>
-            <input type="number" id="commissionRate" value="15" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <input type="number" id="commissionRate" value="18" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">Kargo / HepsiJet (TL)</label>
-            <input type="number" id="shippingCost" value="35" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Kargo Maliyeti (TL)</label>
+            <input type="number" id="shippingCost" value="38" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
           </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Hepsiburada İşlem Bedeli (KDV Dahil TL)</label>
+          <input type="number" id="serviceFee" value="7.50" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
         </div>
       </div>
 
-      <!-- Sağ: Sonuç Panel -->
+      <!-- Sonuç Panel -->
       <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-sm flex flex-col justify-between">
         <div>
           <h2 class="text-lg font-bold text-slate-200 border-b border-slate-800 pb-3">Hepsiburada Kesinti Özeti</h2>
@@ -90,11 +93,15 @@
               <span id="resCommission" class="font-semibold text-red-400">0.00 TL</span>
             </div>
             <div class="flex justify-between text-sm">
+              <span class="text-slate-400">İşlem Bedeli:</span>
+              <span id="resServiceFee" class="font-semibold text-red-400">0.00 TL</span>
+            </div>
+            <div class="flex justify-between text-sm">
               <span class="text-slate-400">Kargo Maliyeti:</span>
               <span id="resShipping" class="font-semibold text-red-400">0.00 TL</span>
             </div>
             <div class="flex justify-between text-sm">
-              <span class="text-slate-400">Tahmini KDV Yükü (%20):</span>
+              <span class="text-slate-400">Net KDV Yükü (%20):</span>
               <span id="resVat" class="font-semibold text-yellow-400">0.00 TL</span>
             </div>
           </div>
@@ -113,52 +120,66 @@
           </div>
 
           <div class="mt-4 pt-4 border-t border-slate-800 flex gap-2">
-            <button type="button" onclick="copyResults()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold py-2.5 px-3 rounded-lg transition flex items-center justify-center gap-1.5">
-              📋 Sonucu Kopyala
-            </button>
-            <button type="button" onclick="shareWhatsApp()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg transition flex items-center justify-center gap-1.5">
-              💬 WhatsApp
-            </button>
+            <button type="button" onclick="copyResults()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold py-2.5 px-3 rounded-lg transition">📋 Sonucu Kopyala</button>
+            <button type="button" onclick="shareWhatsApp()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg transition">💬 WhatsApp</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SEO REHBER İÇERİĞİ -->
-    <article class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6 text-slate-700 text-sm">
-      <h2 class="text-2xl font-bold text-slate-900">Hepsiburada Satıcı Kâr Hesaplama Mantığı</h2>
-      <p>Hepsiburada üzerinden yapılan satışlarda kârlılık hesabı yapılırken kategori bazlı komisyon oranı, pazaryeri işlem bedeli ve kargo kesintileri dikkate alınmalıdır.</p>
+    <!-- GERÇEK BİLGİLENDİRME -->
+    <article class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-slate-700 text-sm">
+      <h2 class="text-2xl font-bold text-slate-900">Güncel Hepsiburada Komisyon Oranları (2026)</h2>
+      <ul class="list-disc pl-5 space-y-1">
+        <li><strong>Moda & Ayakkabı:</strong> %19 - %21</li>
+        <li><strong>Ev Tekstili & Züccaciye:</strong> %17 - %19</li>
+        <li><strong>Anne & Bebek:</strong> %14 - %16</li>
+        <li><strong>Hepsiburada İşlem Bedeli:</strong> Satış başı sabit hizmet kesintisidir.</li>
+      </ul>
     </article>
   </main>
 
   <footer class="bg-white border-t border-slate-200 mt-16 py-8">
-    <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-500 space-y-3">
-      <div class="space-x-4">
-        <a href="gizlilik-politikasi.html" class="hover:underline">Gizlilik Politikası</a>
-        <a href="kullanim-kosullari.html" class="hover:underline">Kullanım Koşulları</a>
-        <a href="iletisim.html" class="hover:underline">İletişim</a>
+    <div class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500 space-y-3">
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="index.html" class="hover:underline">Tüm Pazaryerleri</a>
+        <a href="trendyol-komisyon-hesaplama.html" class="hover:underline">Trendyol Hesaplama</a>
+        <a href="hepsiburada-komisyon-hesaplama.html" class="hover:underline">Hepsiburada Hesaplama</a>
+        <a href="amazon-komisyon-hesaplama.html" class="hover:underline">Amazon Hesaplama</a>
+        <a href="n11-komisyon-hesaplama.html" class="hover:underline">n11 Hesaplama</a>
+        <a href="sss.html" class="hover:underline">SSS</a>
       </div>
       <p>&copy; 2026 PazaryeriMetrik - Tüm Hakları Saklıdır.</p>
     </div>
   </footer>
 
   <script>
+    function applyCategoryRate() {
+      const val = document.getElementById('categorySelect').value;
+      if (val !== 'custom') {
+        document.getElementById('commissionRate').value = val;
+        calculate();
+      }
+    }
+
     function calculate() {
       const cost = parseFloat(document.getElementById('costPrice').value) || 0;
       const sell = parseFloat(document.getElementById('sellPrice').value) || 0;
       const commRate = parseFloat(document.getElementById('commissionRate').value) || 0;
       const shipping = parseFloat(document.getElementById('shippingCost').value) || 0;
+      const serviceFee = parseFloat(document.getElementById('serviceFee').value) || 0;
 
       const commissionTL = sell * (commRate / 100);
       const vatOutput = sell - (sell / 1.20);
-      const vatInput = (cost - (cost / 1.20)) + (commissionTL - (commissionTL / 1.20)) + (shipping - (shipping / 1.20));
+      const vatInput = (cost - (cost / 1.20)) + (commissionTL - (commissionTL / 1.20)) + (shipping - (shipping / 1.20)) + (serviceFee - (serviceFee / 1.20));
       const netVat = Math.max(0, vatOutput - vatInput);
 
-      const totalCost = cost + commissionTL + shipping + netVat;
+      const totalCost = cost + commissionTL + shipping + serviceFee + netVat;
       const netProfit = sell - totalCost;
       const margin = sell > 0 ? (netProfit / sell) * 100 : 0;
 
       document.getElementById('resCommission').innerText = commissionTL.toFixed(2) + ' TL';
+      document.getElementById('resServiceFee').innerText = serviceFee.toFixed(2) + ' TL';
       document.getElementById('resShipping').innerText = shipping.toFixed(2) + ' TL';
       document.getElementById('resVat').innerText = netVat.toFixed(2) + ' TL';
       document.getElementById('resNetProfit').innerText = netProfit.toFixed(2) + ' TL';
@@ -168,22 +189,12 @@
     function getResultText() {
       const name = document.getElementById('productName').value || 'Hepsiburada Ürünü';
       const sell = document.getElementById('sellPrice').value || '0';
-      const commission = document.getElementById('resCommission').innerText;
       const netProfit = document.getElementById('resNetProfit').innerText;
-      const margin = document.getElementById('resMargin').innerText;
-
-      return `📊 *Hepsiburada Kâr Analizi*\n` +
-             `📦 *Ürün:* ${name}\n` +
-             `🏷️ *Satış Fiyatı:* ${sell} TL\n` +
-             `💸 *Hepsiburada Komisyonu:* ${commission}\n` +
-             `💰 *Net Kâr:* ${netProfit} (${margin})\n\n` +
-             `Hesaplama Aracı: https://pazaryerihesaplama.vercel.app/hepsiburada-komisyon-hesaplama.html`;
+      return `📊 *Hepsiburada Kâr Analizi*\n📦 *Ürün:* ${name}\n🏷️ *Satış Fiyatı:* ${sell} TL\n💰 *Net Kâr:* ${netProfit}\nhttps://pazaryerihesaplama.vercel.app/hepsiburada-komisyon-hesaplama.html`;
     }
 
     function copyResults() {
-      navigator.clipboard.writeText(getResultText()).then(() => {
-        alert("✅ Hepsiburada hesaplama sonucu kopyalandı!");
-      });
+      navigator.clipboard.writeText(getResultText()).then(() => alert("✅ Hepsiburada sonucu kopyalandı!"));
     }
 
     function shareWhatsApp() {
