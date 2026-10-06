@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://siteniz.vercel.app/</loc>
+    <loc>https://pazaryerihesaplama.vercel.app//</loc>
     <lastmod>2026-10-05</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://siteniz.vercel.app/gizlilik-politikasi.html</loc>
+    <loc>https://pazaryerihesaplama.vercel.app//gizlilik-politikasi.html</loc>
     <priority>0.30</priority>
   </url>
   <url>
-    <loc>https://siteniz.vercel.app/kullanim-kosullari.html</loc>
+    <loc>https://pazaryerihesaplama.vercel.app//kullanim-kosullari.html</loc>
     <priority>0.30</priority>
   </url>
   <url>
-    <loc>https://siteniz.vercel.app/iletisim.html</loc>
+    <loc>https://pazaryerihesaplama.vercel.app//iletisim.html</loc>
     <priority>0.30</priority>
   </url>
 </urlset>
