@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Etiketleri -->
+  <title>Trendyol Kâr Hesaplayıcı 2026 - Pazaryeri Komisyon ve Kesinti Analizi</title>
+  <meta name="description" content="Trendyol, Hepsiburada ve Çiçeksepeti satıcıları için ücretsiz net kâr ve komisyon hesaplama aracı. Kargo, KDV ve komisyon oranlarını girin, net kârınızı anında öğrenin.">
+  <meta name="keywords" content="trendyol kâr hesaplama, pazaryeri komisyon oranları, e-ticaret kâr marjı hesaplama, trendyol kargo ücretleri">
+  <meta name="author" content="Pazaryeri Metrik">
+  <link rel="canonical" href="https://siteniz.vercel.app/" />
+
+  <!-- Open Graph / Sosyal Medya -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trendyol Kâr Hesaplayıcı - Ücretsiz Satıcı Analiz Aracı">
+  <meta property="og:description" content="E-ticaret satışlarınızdan gerçekten ne kadar kazandığınızı anında hesaplayın.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+
+  <!-- Navigasyon -->
+  <nav class="bg-white border-b border-slate-200 py-4 px-6 mb-8">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold text-blue-600">PazaryeriMetrik</a>
+      <div class="space-x-4 text-sm font-medium text-slate-600">
+        <a href="index.html" class="hover:text-blue-600">Hesaplayıcı</a>
+        <a href="iletisim.html" class="hover:text-blue-600">İletişim</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 space-y-10">
+
+    <!-- Header Section -->
+    <section class="text-center space-y-2">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900">Trendyol & Pazaryeri Net Kâr Hesaplayıcı</h1>
+      <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto">Komisyon, kargo, KDV ve ürün alış fiyatını girin; elinize geçecek net nakit tutarı ve kâr marjınızı saniyeler içinde hesaplayın.</p>
+    </section>
+
+    <!-- HESAPLAYICI ARACI -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Sol: Form -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+        <h2 class="text-lg font-bold text-slate-900 border-b pb-3">Ürün ve Maliyet Verileri</h2>
+        
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Adı / Stok Kodu</label>
+          <input type="text" id="productName" placeholder="Örn: Deri Cüzdan" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Alış (TL - KDV Dahil)</label>
+            <input type="number" id="costPrice" value="100" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Satış Fiyatı (TL - KDV Dahil)</label>
+            <input type="number" id="sellPrice" value="250" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Komisyon Oranı (%)</label>
+            <input type="number" id="commissionRate" value="20" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Kargo Maliyeti (TL)</label>
+            <input type="number" id="shippingCost" value="35" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+        </div>
+
+        <button onclick="saveProduct()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm transition">
+          Ürünü Listeme Kaydet
+        </button>
+      </div>
+
+      <!-- Sağ: Sonuç Panel -->
+      <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-sm flex flex-col justify-between">
+        <div>
+          <h2 class="text-lg font-bold text-slate-200 border-b border-slate-800 pb-3">Kesinti ve Kâr Özeti</h2>
+          
+          <div class="mt-4 space-y-3">
+            <div class="flex justify-between text-sm">
+              <span class="text-slate-400">Pazaryeri Komisyonu:</span>
+              <span id="resCommission" class="font-semibold text-red-400">0.00 TL</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-slate-400">Kargo & Lojistik:</span>
+              <span id="resShipping" class="font-semibold text-red-400">0.00 TL</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-slate-400">Tahmini KDV Yükü (%20):</span>
+              <span id="resVat" class="font-semibold text-yellow-400">0.00 TL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-800">
+          <div class="flex justify-between items-baseline">
+            <span class="text-slate-400 text-sm">Net Kârınız:</span>
+            <span id="resNetProfit" class="text-3xl font-extrabold text-emerald-400">0.00 TL</span>
+          </div>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-slate-400 text-xs">Net Kâr Marjı:</span>
+            <span id="resMargin" class="text-sm font-semibold bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-md">%0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kaydedilen Ürünler Tablosu -->
+    <section class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+      <h3 class="text-base font-bold text-slate-900">Kaydedilen Ürün Listesi (Tarayıcıda Saklanır)</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs text-slate-600">
+          <thead class="bg-slate-100 text-slate-700 font-semibold uppercase">
+            <tr>
+              <th class="p-2.5">Ürün Adı</th>
+              <th class="p-2.5">Alış</th>
+              <th class="p-2.5">Satış</th>
+              <th class="p-2.5">Net Kâr</th>
+              <th class="p-2.5">Marj</th>
+              <th class="p-2.5">İşlem</th>
+            </tr>
+          </thead>
+          <tbody id="savedProductsTable">
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEO MAKALE BÖLÜMÜ (Google Üst Sıralar İçin Kritik Şart) -->
+    <article class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6 text-slate-700 text-sm">
+      <h2 class="text-2xl font-bold text-slate-900">Trendyol Satıcı Kâr Hesaplaması Nasıl Yapılır?</h2>
+      <p>E-ticaret dünyasında başarılı olmanın ilk kuralı, ciroya değil <strong>net kâra</strong> odaklanmaktır. Trendyol, Hepsiburada ve Amazon gibi pazar yerlerinde satış yaparken doğru fiyatlandırma stratejisi oluşturmak hayati önem taşır. Ürün satış fiyatınızı belirlerken göz önünde bulundurmanız gereken temel kesintiler şunlardır:</p>
+      
+      <h3 class="text-lg font-bold text-slate-900">1. Pazaryeri Komisyon Oranları</h3>
+      <p>Her kategoriye özel belirlenen komisyon oranları satış fiyatı üzerinden kesilir. Örneğin giyim kategorisinde komisyon %20 iken, elektronik ürünlerde %8-12 bandına düşebilir. Komisyon tutarı hesaplanırken satış fiyatının tamamı dikkate alınır.</p>
+
+      <h3 class="text-lg font-bold text-slate-900">2. Kargo ve Lojistik Giderleri</h3>
+      <p>Desi miktarına göre değişen kargo ücretleri satıcı hesabından düşülür. Belirli bir sepet tutarının üzerindeki siparişlerde kargo bedelini satıcının karşılaması ürünün görünürlüğünü artırır.</p>
+
+      <h3 class="text-lg font-bold text-slate-900">3. KDV ve Vergi Mantığı</h3>
+      <p>Satış yaparken tahsil ettiğiniz KDV ile mal alırken ve gider yazarken ödediğiniz KDV arasındaki fark ay sonunda devlete ödenir. Doğru kâr hesabı için matrah üzerinden KDV farkının düşülmesi gerekir.</p>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-16 py-8">
+    <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-500 space-y-3">
+      <div class="space-x-4">
+        <a href="gizlilik-politikasi.html" class="hover:underline">Gizlilik Politikası</a>
+        <a href="kullanim-kosullari.html" class="hover:underline">Kullanım Koşulları</a>
+        <a href="iletisim.html" class="hover:underline">İletişim</a>
+      </div>
+      <p>&copy; 2026 PazaryeriMetrik - Tüm Hakları Saklıdır.</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT MANTIĞI -->
+  <script>
+    function calculate() {
+      const cost = parseFloat(document.getElementById('costPrice').value) || 0;
+      const sell = parseFloat(document.getElementById('sellPrice').value) || 0;
+      const commRate = parseFloat(document.getElementById('commissionRate').value) || 0;
+      const shipping = parseFloat(document.getElementById('shippingCost').value) || 0;
+
+      // Mantık Hesaplamaları
+      const commissionTL = sell * (commRate / 100);
+      
+      // KDV Dengesi (%20 KDV varsayılan)
+      const vatOutput = sell - (sell / 1.20);
+      const vatInput = (cost - (cost / 1.20)) + (commissionTL - (commissionTL / 1.20)) + (shipping - (shipping / 1.20));
+      const netVat = Math.max(0, vatOutput - vatInput);
+
+      const totalCost = cost + commissionTL + shipping + netVat;
+      const netProfit = sell - totalCost;
+      const margin = sell > 0 ? (netProfit / sell) * 100 : 0;
+
+      // Ekrana Yazdırma
+      document.getElementById('resCommission').innerText = commissionTL.toFixed(2) + ' TL';
+      document.getElementById('resShipping').innerText = shipping.toFixed(2) + ' TL';
+      document.getElementById('resVat').innerText = netVat.toFixed(2) + ' TL';
+      document.getElementById('resNetProfit').innerText = netProfit.toFixed(2) + ' TL';
+      document.getElementById('resMargin').innerText = '%' + margin.toFixed(1);
+    }
+
+    function saveProduct() {
+      const name = document.getElementById('productName').value || 'İsimsiz Ürün';
+      const cost = parseFloat(document.getElementById('costPrice').value) || 0;
+      const sell = parseFloat(document.getElementById('sellPrice').value) || 0;
+      const netProfit = document.getElementById('resNetProfit').innerText;
+      const margin = document.getElementById('resMargin').innerText;
+
+      const item = { name, cost, sell, netProfit, margin, id: Date.now() };
+      let items = JSON.parse(localStorage.getItem('my_products') || '[]');
+      items.push(item);
+      localStorage.setItem('my_products', JSON.stringify(items));
+      
+      renderTable();
+      document.getElementById('productName').value = '';
+    }
+
+    function deleteProduct(id) {
+      let items = JSON.parse(localStorage.getItem('my_products') || '[]');
+      items = items.filter(i => i.id !== id);
+      localStorage.setItem('my_products', JSON.stringify(items));
+      renderTable();
+    }
+
+    function renderTable() {
+      let items = JSON.parse(localStorage.getItem('my_products') || '[]');
+      const tbody = document.getElementById('savedProductsTable');
+      tbody.innerHTML = '';
+
+      items.forEach(item => {
+        tbody.innerHTML += `
+          <tr class="border-b hover:bg-slate-50">
+            <td class="p-2.5 font-medium text-slate-800">${item.name}</td>
+            <td class="p-2.5">${item.cost} TL</td>
+            <td class="p-2.5">${item.sell} TL</td>
+            <td class="p-2.5 font-bold text-emerald-600">${item.netProfit}</td>
+            <td class="p-2.5">${item.margin}</td>
+            <td class="p-2.5"><button onclick="deleteProduct(${item.id})" class="text-red-500 font-medium hover:underline">Sil</button></td>
+          </tr>
+        `;
+      });
+    }
+
+    calculate();
+    renderTable();
+  </script>
+</body>
+</html>
