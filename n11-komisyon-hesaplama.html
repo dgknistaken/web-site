@@ -3,100 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>n11 Komisyon ve Kâr Hesaplama 2026 | Mağaza Kârlılık Hesabı</title>
-  <meta name="description" content="2026 n11 komisyon oranları, pazaryeri hizmet bedeli, kargo ve KDV hesaplamaları ile n11 mağaza satışlarınızın net kârını hesaplayın.">
+  <title>n11 Komisyon Hesaplama 2026 | n11 Kâr ve Kargo Hesaplayıcı</title>
+  <meta name="description" content="2026 güncel n11 komisyon oranları, pazaryeri hizmet bedeli, kargo ve KDV dahil net kâr hesaplama aracı. n11 mağaza kârlılığınızı hemen analiz edin.">
   <link rel="canonical" href="https://pazaryerihesaplama.vercel.app/n11-komisyon-hesaplama.html">
-  
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "n11 Komisyon ve Kâr Hesaplama",
-    "url": "https://pazaryerihesaplama.vercel.app/n11-komisyon-hesaplama.html",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "TRY"
-    }
-  }
-  </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed flex flex-col min-h-screen">
 
-  <!-- Navigasyon -->
-  <nav class="bg-white border-b border-slate-200 py-4 px-6 mb-8">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold text-blue-600">PazaryeriMetrik</a>
-      <div class="space-x-4 text-sm font-medium text-slate-600 overflow-x-auto whitespace-nowrap">
-        <a href="index.html" class="hover:text-blue-600">Ana Sayfa</a>
-        <a href="trendyol-komisyon-hesaplama.html" class="hover:text-blue-600">Trendyol</a>
-        <a href="hepsiburada-komisyon-hesaplama.html" class="hover:text-blue-600">Hepsiburada</a>
-        <a href="amazon-komisyon-hesaplama.html" class="hover:text-blue-600">Amazon</a>
-        <a href="n11-komisyon-hesaplama.html" class="text-blue-600 font-bold">n11</a>
-        <a href="sss.html" class="hover:text-blue-600">SSS</a>
+  <!-- Shared Header Navigation -->
+  <nav class="bg-white border-b border-slate-200 py-4 px-6 mb-8 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <a href="index.html" class="text-xl font-extrabold text-blue-600 tracking-tight flex items-center gap-2">
+        <span>📊</span> PazaryeriMetrik
+      </a>
+      <div class="flex flex-wrap justify-center gap-1.5 md:gap-3 text-xs md:text-sm font-semibold text-slate-600">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Tüm Pazaryerleri</a>
+        <a href="trendyol-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Trendyol</a>
+        <a href="hepsiburada-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Hepsiburada</a>
+        <a href="amazon-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Amazon TR</a>
+        <a href="n11-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg bg-red-50 text-red-600 font-bold transition">n11</a>
+        <a href="sss.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">SSS</a>
       </div>
     </div>
   </nav>
 
-  <main class="max-w-5xl mx-auto px-4 space-y-10">
-    <section class="text-center space-y-2">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900">n11 Komisyon ve Kâr Hesaplama (2026)</h1>
-      <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto">n11 mağazanızdaki satışlar için kategori komisyonu, kargo kesintisi ve vergi hesaplamasını tek tıkla yapın.</p>
+  <main class="max-w-6xl mx-auto px-4 space-y-10 flex-grow w-full">
+    <section class="text-center space-y-3">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900">n11 Komisyon & Kâr Hesaplama</h1>
+      <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto">n11 mağazanızdaki satışlar için kategori komisyon kesintisi, pazaryeri hizmet bedeli, kargo ve net KDV yükünü hesaplayın.</p>
     </section>
 
-    <!-- HESAPLAYICI -->
+    <!-- HESAPLAYICI PANELİ -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-        <h2 class="text-lg font-bold text-slate-900 border-b pb-3">n11 Satış Verileri</h2>
+        <h2 class="text-lg font-bold text-slate-900 border-b pb-3">Satış ve Maliyet Bilgileri</h2>
         
         <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Adı / Kod</label>
-          <input type="text" id="productName" placeholder="Örn: n11 Özel Ürün" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Adı / Stok Kodu</label>
+          <input type="text" id="productName" placeholder="Örn: Ev & Yaşam Ürünü" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none">
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Maliyeti (TL)</label>
-            <input type="number" id="costPrice" value="100" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Alış Maliyeti (TL)</label>
+            <input type="number" id="costPrice" value="120" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none">
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-600 mb-1">n11 Satış Fiyatı (TL)</label>
-            <input type="number" id="sellPrice" value="250" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <input type="number" id="sellPrice" value="300" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none">
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">Komisyon Oranı (%)</label>
-            <input type="number" id="commissionRate" value="16" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <label class="block text-xs font-semibold text-slate-600 mb-1">n11 Komisyon Oranı (%)</label>
+            <input type="number" id="commissionRate" value="16" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none">
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-600 mb-1">Kargo Maliyeti (TL)</label>
-            <input type="number" id="shippingCost" value="35" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <input type="number" id="shippingCost" value="40" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">n11 Hizmet Bedeli (TL)</label>
+            <input type="number" id="serviceFee" value="5.00" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün KDV Oranı (%)</label>
+            <select id="vatRate" onchange="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none bg-slate-50 font-medium">
+              <option value="20">%20 (Genel KDV Oranı)</option>
+              <option value="10">%10 (Gıda / Temel Tüketim)</option>
+              <option value="1">%1 (Özel Gıda / Kitap)</option>
+            </select>
           </div>
         </div>
       </div>
 
-      <!-- Sağ: Sonuç Panel -->
-      <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-sm flex flex-col justify-between">
+      <!-- SONUÇ PANELİ -->
+      <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-sm flex flex-col justify-between border border-slate-800">
         <div>
-          <h2 class="text-lg font-bold text-slate-200 border-b border-slate-800 pb-3">n11 Kesinti Özeti</h2>
+          <h2 class="text-lg font-bold text-slate-200 border-b border-slate-800 pb-3">n11 Kesinti Detayları</h2>
           
           <div class="mt-4 space-y-3">
             <div class="flex justify-between text-sm">
-              <span class="text-slate-400">n11 Komisyon Tutarı:</span>
+              <span class="text-slate-400">n11 Komisyon Kesintisi:</span>
               <span id="resCommission" class="font-semibold text-red-400">0.00 TL</span>
             </div>
             <div class="flex justify-between text-sm">
-              <span class="text-slate-400">Kargo Kesintisi:</span>
-              <span id="resShipping" class="font-semibold text-red-400">0.00 TL</span>
+              <span class="text-slate-400">n11 Hizmet Bedeli:</span>
+              <span id="resServiceFee" class="font-semibold text-red-400">0.00 TL</span>
             </div>
             <div class="flex justify-between text-sm">
-              <span class="text-slate-400">Tahmini KDV Yükü (%20):</span>
+              <span class="text-slate-400">Kargo Masrafı:</span>
+              <span id="resShipping" class="font-semibold text-red-400">0.00 TL</span>
+            </div>
+            <div class="flex justify-between text-sm border-t border-slate-800 pt-2">
+              <span class="text-slate-400">Ödenecek Net KDV Yükü:</span>
               <span id="resVat" class="font-semibold text-yellow-400">0.00 TL</span>
             </div>
           </div>
@@ -105,11 +109,11 @@
         <div>
           <div class="mt-6 pt-4 border-t border-slate-800">
             <div class="flex justify-between items-baseline">
-              <span class="text-slate-400 text-sm">Net Kârınız:</span>
+              <span class="text-slate-400 text-sm">Ele Geçen Net Kâr:</span>
               <span id="resNetProfit" class="text-3xl font-extrabold text-emerald-400">0.00 TL</span>
             </div>
             <div class="flex justify-between items-center mt-2">
-              <span class="text-slate-400 text-xs">Net Kâr Marjı:</span>
+              <span class="text-slate-400 text-xs">Net Kâr Marjı (Satışa Göre):</span>
               <span id="resMargin" class="text-sm font-semibold bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-md">%0</span>
             </div>
           </div>
@@ -126,16 +130,44 @@
       </div>
     </section>
 
-    <!-- SEO İÇERİK -->
-    <article class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-slate-700 text-sm">
-      <h2 class="text-2xl font-bold text-slate-900">n11 Satıcı Komisyon Oranları Hesaplama</h2>
-      <p>n11 mağazanızda doğru fiyatlandırma stratejisi uygulamak için kategori komisyon oranını ve kargo giderlerini hesaba katmak şarttır.</p>
+    <!-- IÇERIK -->
+    <article class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6 text-slate-700 text-sm">
+      <h2 class="text-2xl font-bold text-slate-900">2026 n11 Komisyon Oranları Listesi</h2>
+      <p>n11 mağazalarında uygulanan güncel kategori bazlı ortalama komisyon oranları şu şekildedir:</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+          <span class="font-bold text-slate-900 block mb-1">Giyim & Aksesuar</span>
+          <span class="text-slate-600">%18 - %20 Arası Komisyon</span>
+        </div>
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+          <span class="font-bold text-slate-900 block mb-1">Elektronik Aksesuar</span>
+          <span class="text-slate-600">%11 - %15 Arası Komisyon</span>
+        </div>
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+          <span class="font-bold text-slate-900 block mb-1">Ev & Yaşam / Dekorasyon</span>
+          <span class="text-slate-600">%16 - %19 Arası Komisyon</span>
+        </div>
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+          <span class="font-bold text-slate-900 block mb-1">Kozmetik & Kişisel Bakım</span>
+          <span class="text-slate-600">%15 - %18 Arası Komisyon</span>
+        </div>
+      </div>
     </article>
   </main>
 
+  <!-- Shared Footer -->
   <footer class="bg-white border-t border-slate-200 mt-16 py-8">
-    <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-500 space-y-3">
-      <div class="space-x-4">
+    <div class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500 space-y-4">
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="index.html" class="hover:underline">Tüm Pazaryerleri</a>
+        <a href="trendyol-komisyon-hesaplama.html" class="hover:underline">Trendyol Hesaplama</a>
+        <a href="hepsiburada-komisyon-hesaplama.html" class="hover:underline">Hepsiburada Hesaplama</a>
+        <a href="amazon-komisyon-hesaplama.html" class="hover:underline">Amazon Hesaplama</a>
+        <a href="n11-komisyon-hesaplama.html" class="hover:underline font-semibold">n11 Hesaplama</a>
+        <a href="sss.html" class="hover:underline">SSS</a>
+      </div>
+      <div class="flex justify-center gap-4 flex-wrap text-slate-400">
         <a href="gizlilik-politikasi.html" class="hover:underline">Gizlilik Politikası</a>
         <a href="kullanim-kosullari.html" class="hover:underline">Kullanım Koşulları</a>
         <a href="iletisim.html" class="hover:underline">İletişim</a>
@@ -150,17 +182,25 @@
       const sell = parseFloat(document.getElementById('sellPrice').value) || 0;
       const commRate = parseFloat(document.getElementById('commissionRate').value) || 0;
       const shipping = parseFloat(document.getElementById('shippingCost').value) || 0;
+      const serviceFee = parseFloat(document.getElementById('serviceFee').value) || 0;
+      const vatRate = parseFloat(document.getElementById('vatRate').value) / 100;
 
       const commissionTL = sell * (commRate / 100);
-      const vatOutput = sell - (sell / 1.20);
-      const vatInput = (cost - (cost / 1.20)) + (commissionTL - (commissionTL / 1.20)) + (shipping - (shipping / 1.20));
-      const netVat = Math.max(0, vatOutput - vatInput);
 
-      const totalCost = cost + commissionTL + shipping + netVat;
+      const vatOutput = sell - (sell / (1 + vatRate));
+      const vatInputCost = cost - (cost / (1 + vatRate));
+      const vatInputComm = commissionTL - (commissionTL / 1.20);
+      const vatInputShip = shipping - (shipping / 1.20);
+      const vatInputService = serviceFee - (serviceFee / 1.20);
+
+      const netVat = Math.max(0, vatOutput - (vatInputCost + vatInputComm + vatInputShip + vatInputService));
+
+      const totalCost = cost + commissionTL + shipping + serviceFee + netVat;
       const netProfit = sell - totalCost;
       const margin = sell > 0 ? (netProfit / sell) * 100 : 0;
 
       document.getElementById('resCommission').innerText = commissionTL.toFixed(2) + ' TL';
+      document.getElementById('resServiceFee').innerText = serviceFee.toFixed(2) + ' TL';
       document.getElementById('resShipping').innerText = shipping.toFixed(2) + ' TL';
       document.getElementById('resVat').innerText = netVat.toFixed(2) + ' TL';
       document.getElementById('resNetProfit').innerText = netProfit.toFixed(2) + ' TL';
@@ -168,24 +208,20 @@
     }
 
     function getResultText() {
-      const name = document.getElementById('productName').value || 'n11 Ürünü';
+      const name = document.getElementById('productName').value || 'Ürün';
       const sell = document.getElementById('sellPrice').value || '0';
-      const commission = document.getElementById('resCommission').innerText;
       const netProfit = document.getElementById('resNetProfit').innerText;
       const margin = document.getElementById('resMargin').innerText;
 
       return `📊 *n11 Kâr Analizi*\n` +
              `📦 *Ürün:* ${name}\n` +
              `🏷️ *Satış Fiyatı:* ${sell} TL\n` +
-             `💸 *n11 Komisyonu:* ${commission}\n` +
              `💰 *Net Kâr:* ${netProfit} (${margin})\n\n` +
              `Hesaplama Aracı: https://pazaryerihesaplama.vercel.app/n11-komisyon-hesaplama.html`;
     }
 
     function copyResults() {
-      navigator.clipboard.writeText(getResultText()).then(() => {
-        alert("✅ n11 hesaplama sonucu kopyalandı!");
-      });
+      navigator.clipboard.writeText(getResultText()).then(() => alert("✅ Hesaplama sonucu kopyalandı!"));
     }
 
     function shareWhatsApp() {
