@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Ana Sayfa -->
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/</loc>
     <lastmod>2026-10-06</lastmod>
     <priority>1.00</priority>
   </url>
+
+  <!-- Pazaryeri Hesaplama Sayfaları -->
+  <url>
+    <loc>https://pazaryerihesaplama.vercel.app/trendyol-komisyon-hesaplama.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://pazaryerihesaplama.vercel.app/hepsiburada-komisyon-hesaplama.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://pazaryerihesaplama.vercel.app/amazon-komisyon-hesaplama.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://pazaryerihesaplama.vercel.app/n11-komisyon-hesaplama.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- SSS ve Bilgi Sayfası -->
+  <url>
+    <loc>https://pazaryerihesaplama.vercel.app/sss.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+  <!-- Kurumsal ve Yasal Sayfalar -->
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/gizlilik-politikasi.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <priority>0.30</priority>
   </url>
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/kullanim-kosullari.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <priority>0.30</priority>
   </url>
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/iletisim.html</loc>
+    <lastmod>2026-10-06</lastmod>
     <priority>0.30</priority>
   </url>
 </urlset>

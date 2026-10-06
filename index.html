@@ -9,7 +9,7 @@
   <meta name="description" content="Trendyol, Hepsiburada ve Çiçeksepeti satıcıları için ücretsiz net kâr ve komisyon hesaplama aracı. Kargo, KDV ve komisyon oranlarını girin, net kârınızı anında öğrenin.">
   <meta name="keywords" content="trendyol kâr hesaplama, pazaryeri komisyon oranları, e-ticaret kâr marjı hesaplama, trendyol kargo ücretleri">
   <meta name="author" content="Pazaryeri Metrik">
-  <link rel="canonical" href="https://siteniz.vercel.app/" />
+  <link rel="canonical" href="https://pazaryerihesaplama.vercel.app/" />
 
   <!-- Open Graph / Sosyal Medya -->
   <meta property="og:type" content="website">
@@ -27,6 +27,7 @@
       <a href="index.html" class="text-xl font-bold text-blue-600">PazaryeriMetrik</a>
       <div class="space-x-4 text-sm font-medium text-slate-600">
         <a href="index.html" class="hover:text-blue-600">Hesaplayıcı</a>
+        <a href="sss.html" class="hover:text-blue-600">SSS</a>
         <a href="iletisim.html" class="hover:text-blue-600">İletişim</a>
       </div>
     </div>
@@ -99,14 +100,26 @@
           </div>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-slate-800">
-          <div class="flex justify-between items-baseline">
-            <span class="text-slate-400 text-sm">Net Kârınız:</span>
-            <span id="resNetProfit" class="text-3xl font-extrabold text-emerald-400">0.00 TL</span>
+        <div>
+          <div class="mt-6 pt-4 border-t border-slate-800">
+            <div class="flex justify-between items-baseline">
+              <span class="text-slate-400 text-sm">Net Kârınız:</span>
+              <span id="resNetProfit" class="text-3xl font-extrabold text-emerald-400">0.00 TL</span>
+            </div>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-slate-400 text-xs">Net Kâr Marjı:</span>
+              <span id="resMargin" class="text-sm font-semibold bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-md">%0</span>
+            </div>
           </div>
-          <div class="flex justify-between items-center mt-2">
-            <span class="text-slate-400 text-xs">Net Kâr Marjı:</span>
-            <span id="resMargin" class="text-sm font-semibold bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-md">%0</span>
+
+          <!-- Kopyala & Paylaş Butonları -->
+          <div class="mt-4 pt-4 border-t border-slate-800 flex gap-2">
+            <button type="button" onclick="copyResults()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold py-2.5 px-3 rounded-lg transition flex items-center justify-center gap-1.5">
+              📋 Sonucu Kopyala
+            </button>
+            <button type="button" onclick="shareWhatsApp()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg transition flex items-center justify-center gap-1.5">
+              💬 WhatsApp
+            </button>
           </div>
         </div>
       </div>
@@ -134,7 +147,7 @@
       </div>
     </section>
 
-    <!-- SEO MAKALE BÖLÜMÜ (Google Üst Sıralar İçin Kritik Şart) -->
+    <!-- SEO MAKALE BÖLÜMÜ -->
     <article class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6 text-slate-700 text-sm">
       <h2 class="text-2xl font-bold text-slate-900">Trendyol Satıcı Kâr Hesaplaması Nasıl Yapılır?</h2>
       <p>E-ticaret dünyasında başarılı olmanın ilk kuralı, ciroya değil <strong>net kâra</strong> odaklanmaktır. Trendyol, Hepsiburada ve Amazon gibi pazar yerlerinde satış yaparken doğru fiyatlandırma stratejisi oluşturmak hayati önem taşır. Ürün satış fiyatınızı belirlerken göz önünde bulundurmanız gereken temel kesintiler şunlardır:</p>
@@ -231,6 +244,38 @@
           </tr>
         `;
       });
+    }
+
+    // Paylaşım/Kopyalama Metni Oluşturucu
+    function getResultText() {
+      const name = document.getElementById('productName').value || 'Ürün';
+      const sell = document.getElementById('sellPrice').value || '0';
+      const commission = document.getElementById('resCommission').innerText;
+      const netProfit = document.getElementById('resNetProfit').innerText;
+      const margin = document.getElementById('resMargin').innerText;
+
+      return `📊 *Pazaryeri Metrik - Kâr Analizi*\n` +
+             `📦 *Ürün:* ${name}\n` +
+             `🏷️ *Satış Fiyatı:* ${sell} TL\n` +
+             `💸 *Komisyon:* ${commission}\n` +
+             `💰 *Net Kâr:* ${netProfit} (${margin})\n\n` +
+             `Hesaplama Aracı: https://pazaryerihesaplama.vercel.app/`;
+    }
+
+    // Panoya Kopyalama Fonksiyonu
+    function copyResults() {
+      const text = getResultText();
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ Hesaplama sonucu panoya kopyalandı!");
+      }).catch(() => {
+        alert("Kopyalama başarısız oldu, lütfen tekrar deneyin.");
+      });
+    }
+
+    // WhatsApp Paylaşım Fonksiyonu
+    function shareWhatsApp() {
+      const text = encodeURIComponent(getResultText());
+      window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
     }
 
     calculate();

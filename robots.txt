@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://siteniz.vercel.app/sitemap.xml
+
+Sitemap: https://pazaryerihesaplama.vercel.app/sitemap.xml

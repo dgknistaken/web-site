@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trendyol Komisyon ve Kâr Hesaplama 2026 | Ücretsiz Satıcı Hesaplayıcı</title>
+  <meta name="description" content="2026 güncel Trendyol komisyon oranları, kargo kesintisi, KDV ve stopaj dahil net kârınızı ücretsiz hesaplayın. Trendyol satıcı kârlılık hesaplama aracı.">
+  <link rel="canonical" href="https://pazaryerihesaplama.vercel.app/trendyol-komisyon-hesaplama.html">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Schema.org Yapısal Verisi -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Trendyol Komisyon ve Kâr Hesaplama",
+    "url": "https://pazaryerihesaplama.vercel.app/trendyol-komisyon-hesaplama.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY"
+    }
+  }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+
+  <!-- Navigasyon -->
+  <nav class="bg-white border-b border-slate-200 py-4 px-6 mb-8">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold text-blue-600">PazaryeriMetrik</a>
+      <div class="space-x-4 text-sm font-medium text-slate-600">
+        <a href="index.html" class="hover:text-blue-600">Ana Sayfa</a>
+        <a href="trendyol-komisyon-hesaplama.html" class="text-blue-600 font-bold">Trendyol</a>
+        <a href="hepsiburada-komisyon-hesaplama.html" class="hover:text-blue-600">Hepsiburada</a>
+        <a href="sss.html" class="hover:text-blue-600">SSS</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 space-y-10">
+    <section class="text-center space-y-2">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900">Trendyol Komisyon ve Kâr Hesaplama (2026)</h1>
+      <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto">Trendyol'da satış yaparken komisyon, KDV, kargo ve pazaryeri giderleri düşüldükten sonra elinize geçecek net kârı anında öğrenin.</p>
+    </section>
+
+    <!-- HESAPLAYICI -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+        <h2 class="text-lg font-bold text-slate-900 border-b pb-3">Trendyol Satış Verileri</h2>
+        
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Adı / Stok Kodu</label>
+          <input type="text" id="productName" placeholder="Örn: Trendyol Özel Ürün" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Ürün Maliyeti (TL)</label>
+            <input type="number" id="costPrice" value="100" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Trendyol Satış Fiyatı (TL)</label>
+            <input type="number" id="sellPrice" value="250" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Trendyol Komisyonu (%)</label>
+            <input type="number" id="commissionRate" value="18" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Kargo Maliyeti (TL)</label>
+            <input type="number" id="shippingCost" value="35" oninput="calculate()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+        </div>
+      </div>
+
+      <!-- Sağ: Sonuç Panel -->
+      <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-sm flex flex-col justify-between">
+        <div>
+          <h2 class="text-lg font-bold text-slate-200 border-b border-slate-800 pb-3">Trendyol Kesinti Özeti</h2>
+          
+          <div class="mt-4 space-y-3">
+            <div class="flex justify-between text-sm">
+              <span class="text-slate-400">Komisyon Tutarı:</span>
+              <span id="resCommission" class="font-semibold text-red-400">0.00 TL</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-slate-400">Kargo Maliyeti:</span>
+              <span id="resShipping" class="font-semibold text-red-400">0.00 TL</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-slate-400">Tahmini KDV Yükü (%20):</span>
+              <span id="resVat" class="font-semibold text-yellow-400">0.00 TL</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="mt-6 pt-4 border-t border-slate-800">
+            <div class="flex justify-between items-baseline">
+              <span class="text-slate-400 text-sm">Net Kârınız:</span>
+              <span id="resNetProfit" class="text-3xl font-extrabold text-emerald-400">0.00 TL</span>
+            </div>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-slate-400 text-xs">Net Kâr Marjı:</span>
+              <span id="resMargin" class="text-sm font-semibold bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-md">%0</span>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-slate-800 flex gap-2">
+            <button type="button" onclick="copyResults()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold py-2.5 px-3 rounded-lg transition flex items-center justify-center gap-1.5">
+              📋 Sonucu Kopyala
+            </button>
+            <button type="button" onclick="shareWhatsApp()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg transition flex items-center justify-center gap-1.5">
+              💬 WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO REHBER İÇERİĞİ -->
+    <article class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6 text-slate-700 text-sm">
+      <h2 class="text-2xl font-bold text-slate-900">Trendyol Komisyon Oranları Nasıl Hesaplanır?</h2>
+      <p>Trendyol platformunda satış yaparken net kârlılığı doğru hesaplamak sürdürülebilir e-ticaret için kritik öneme sahiptir. Komisyon tutarı, ürünün KDV dahil satış fiyatı üzerinden kategoriye özel belirlenen yüzde oranı ile hesaplanır.</p>
+    </article>
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 mt-16 py-8">
+    <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-500 space-y-3">
+      <div class="space-x-4">
+        <a href="gizlilik-politikasi.html" class="hover:underline">Gizlilik Politikası</a>
+        <a href="kullanim-kosullari.html" class="hover:underline">Kullanım Koşulları</a>
+        <a href="iletisim.html" class="hover:underline">İletişim</a>
+      </div>
+      <p>&copy; 2026 PazaryeriMetrik - Tüm Hakları Saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+    function calculate() {
+      const cost = parseFloat(document.getElementById('costPrice').value) || 0;
+      const sell = parseFloat(document.getElementById('sellPrice').value) || 0;
+      const commRate = parseFloat(document.getElementById('commissionRate').value) || 0;
+      const shipping = parseFloat(document.getElementById('shippingCost').value) || 0;
+
+      const commissionTL = sell * (commRate / 100);
