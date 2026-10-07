@@ -121,7 +121,6 @@
 
           <div class="mt-4 pt-4 border-t border-slate-800 flex gap-2">
             <button type="button" onclick="copyResults()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold py-2.5 px-3 rounded-lg transition">📋 Sonucu Kopyala</button>
-            <button type="button" onclick="shareWhatsApp()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg transition">💬 WhatsApp</button>
           </div>
         </div>
       </div>
@@ -195,10 +194,6 @@
 
     function copyResults() {
       navigator.clipboard.writeText(getResultText()).then(() => alert("✅ Hepsiburada sonucu kopyalandı!"));
-    }
-
-    function shareWhatsApp() {
-      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(getResultText())}`, '_blank');
     }
 
     calculate();

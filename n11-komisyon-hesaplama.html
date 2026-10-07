@@ -6,7 +6,28 @@
   <title>n11 Komisyon Hesaplama 2026 | n11 Kâr ve Kargo Hesaplayıcı</title>
   <meta name="description" content="2026 güncel n11 komisyon oranları, pazaryeri hizmet bedeli, kargo ve KDV dahil net kâr hesaplama aracı. n11 mağaza kârlılığınızı hemen analiz edin.">
   <link rel="canonical" href="https://pazaryerihesaplama.vercel.app/n11-komisyon-hesaplama.html">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pazaryerihesaplama.vercel.app/n11-komisyon-hesaplama.html">
+  <meta property="og:title" content="n11 Komisyon & Kâr Hesaplama 2026 - PazaryeriMetrik">
+  <meta property="og:description" content="n11 mağazanız için komisyon, kargo ve hizmet bedeli düşülmüş net kârınızı ücretsiz hesaplayın.">
+  <meta property="og:site_name" content="PazaryeriMetrik">
+  
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "n11 Komisyon ve Kâr Hesaplama Aracı",
+    "url": "https://pazaryerihesaplama.vercel.app/n11-komisyon-hesaplama.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript"
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans leading-relaxed flex flex-col min-h-screen">
 
@@ -122,8 +143,8 @@
             <button type="button" onclick="copyResults()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold py-2.5 px-3 rounded-lg transition flex items-center justify-center gap-1.5">
               📋 Sonucu Kopyala
             </button>
-            <button type="button" onclick="shareWhatsApp()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-lg transition flex items-center justify-center gap-1.5">
-              💬 WhatsApp
+            <button type="button" onclick="resetForm()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold py-2.5 px-4 rounded-lg transition flex items-center justify-center">
+              🔄 Temizle
             </button>
           </div>
         </div>
@@ -224,8 +245,15 @@
       navigator.clipboard.writeText(getResultText()).then(() => alert("✅ Hesaplama sonucu kopyalandı!"));
     }
 
-    function shareWhatsApp() {
-      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(getResultText())}`, '_blank');
+    function resetForm() {
+      document.getElementById('productName').value = '';
+      document.getElementById('costPrice').value = 0;
+      document.getElementById('sellPrice').value = 0;
+      document.getElementById('commissionRate').value = 0;
+      document.getElementById('shippingCost').value = 0;
+      document.getElementById('serviceFee').value = 0;
+      document.getElementById('vatRate').value = 20;
+      calculate();
     }
 
     calculate();

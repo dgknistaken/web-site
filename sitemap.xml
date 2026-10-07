@@ -30,4 +30,19 @@
     <lastmod>2026-10-06</lastmod>
     <priority>0.60</priority>
   </url>
+  <url>
+    <loc>https://pazaryerihesaplama.vercel.app/gizlilik-politikasi.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://pazaryerihesaplama.vercel.app/kullanim-kosullari.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://pazaryerihesaplama.vercel.app/iletisim.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.40</priority>
+  </url>
 </urlset>

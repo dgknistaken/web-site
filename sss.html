@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sıkça Sorulan Sorular | PazaryeriMetrik</title>
-  <meta name="description" content="Pazaryeri komisyon oranları, KDV mahsubu ve e-ticaret kârlılık hesaplamaları hakkında merak edilenler.">
-  <link rel="canonical" href="https://pazaryerihesaplama.vercel.app/sss.html">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıkça Sorulan Sorular (SSS) - Pazaryeri Hesaplama</title>
+    <meta name="description" content="Pazaryeri komisyon hesaplama, Trendyol, Hepsiburada, Amazon ve N11 kâr marjı hesaplama ile ilgili en çok sorulan soruların cevapları.">
+    <link rel="canonical" href="https://pazaryerihesaplama.vercel.app/sss.html">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Pazaryeri Hesaplama</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="trendyol-komisyon-hesaplama.html">Trendyol</a></li>
+                    <li><a href="hepsiburada-komisyon-hesaplama.html">Hepsiburada</a></li>
+                    <li><a href="amazon-komisyon-hesaplama.html">Amazon</a></li>
+                    <li><a href="n11-komisyon-hesaplama.html">N11</a></li>
+                    <li><a href="sss.html" class="active">SSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <nav class="bg-white border-b border-slate-200 py-4 px-6 mb-8 sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <a href="index.html" class="text-xl font-extrabold text-blue-600 tracking-tight">PazaryeriMetrik</a>
-      <div class="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm font-semibold text-slate-600">
-        <a href="index.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Tüm Pazaryerleri</a>
-        <a href="trendyol-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Trendyol</a>
-        <a href="hepsiburada-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Hepsiburada</a>
-        <a href="amazon-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Amazon TR</a>
-        <a href="n11-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">n11</a>
-        <a href="sss.html" class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-600 font-bold">SSS</a>
-      </div>
-    </div>
-  </nav>
+    <main class="container">
+        <section class="faq-section">
+            <h1>Sıkça Sorulan Sorular</h1>
+            <p class="subtitle">Pazaryeri komisyonları ve kâr hesaplama aracımız hakkında merak edilenler.</p>
 
-  <main class="max-w-4xl mx-auto px-4 space-y-8">
-    <h1 class="text-3xl font-extrabold text-slate-900 text-center">Sıkça Sorulan Sorular</h1>
+            <div class="faq-list">
+                <article class="faq-item">
+                    <h3>Pazaryeri komisyon oranları KDV dahil mi hesaplanır?</h3>
+                    <p>Pazaryerleri komisyon oranlarını genellikle KDV hariç oranlar üzerinden belirtir. Ancak nihai faturalandırmada komisyon tutarına %20 KDV eklenir. Hesaplama aracımız bu detayları otomatik dikkate alır.</p>
+                </article>
 
-    <div class="space-y-4 text-sm">
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
-        <h3 class="font-bold text-slate-900 text-base">Pazaryeri komisyonları KDV dahil mi hesaplanır?</h3>
-        <p class="text-slate-600">Evet, pazaryerleri kesinti oranlarını KDV dahil nihai satış fiyatı üzerinden hesaplar. Pazaryerinin size kestiği komisyon faturası da %20 KDV içerir.</p>
-      </div>
+                <article class="faq-item">
+                    <h3>Kargo ücretleri satış fiyatından nasıl düşülür?</h3>
+                    <p>Kargo maliyetleri ürün desisine ve satış tutarına göre değişkenlik gösterebilir. Ürününüz için ödeyeceğiniz ortalama kargo bedelini formdaki ilgili alana girerek net kârınızı görebilirsiniz.</p>
+                </article>
 
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
-        <h3 class="font-bold text-slate-900 text-base">KDV Yükü hesaplayıcıda nasıl hesaplanıyor?</h3>
-        <p class="text-slate-600">Müşteriden tahsil ettiğiniz Satış KDV'sinden; alış maliyeti, komisyon faturası, kargo ve hizmet bedeli faturalarındaki KDV indirim konusu (mahsup) edilerek devlet ödeyeceğiniz net KDV hesaplanır.</p>
-      </div>
+                <article class="faq-item">
+                    <h3>Hangi pazaryerleri için kâr hesaplayabilirim?</h3>
+                    <p>Şu anda Türkiye'de en çok tercih edilen Trendyol, Hepsiburada, Amazon Türkiye ve N11 platformları için özel komisyon ve kâr hesaplaması yapabilirsiniz.</p>
+                </article>
 
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
-        <h3 class="font-bold text-slate-900 text-base">Hizmet bedeli / İşlem bedeli nedir?</h3>
-        <p class="text-slate-600">Trendyol, Hepsiburada ve n11 gibi pazaryerleri oransal komisyonun yanı sıra başarılı tamamlanan sipariş başına sabit bir altyapı/işlem bedeli faturası keser.</p>
-      </div>
-    </div>
-  </main>
+                <article class="faq-item">
+                    <h3>Hesaplama sonuçları %100 kesin bilgi midir?</h3>
+                    <p>Aracımız pazaryerlerinin güncel komisyon ve KDV mantığına göre hesaplama yapar. Ancak özel pazaryeri anlaşmaları, hizmet bedelleri veya ekstra kampanya kesintileri mağaza bazlı değişiklik gösterebilir.</p>
+                </article>
+            </div>
+        </section>
+    </main>
 
-  <footer class="bg-white border-t border-slate-200 mt-16 py-8">
-    <div class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500 space-y-3">
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="index.html" class="hover:underline">Tüm Pazaryerleri</a>
-        <a href="trendyol-komisyon-hesaplama.html" class="hover:underline">Trendyol Hesaplama</a>
-        <a href="hepsiburada-komisyon-hesaplama.html" class="hover:underline">Hepsiburada Hesaplama</a>
-        <a href="amazon-komisyon-hesaplama.html" class="hover:underline">Amazon Hesaplama</a>
-        <a href="n11-komisyon-hesaplama.html" class="hover:underline">n11 Hesaplama</a>
-        <a href="sss.html" class="hover:underline">SSS</a>
-      </div>
-      <p>&copy; 2026 PazaryeriMetrik - Tüm Hakları Saklıdır.</p>
-    </div>
-  </footer>
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Pazaryeri Hesaplama. Tüm hakları saklıdır.</p>
+            <div class="footer-links">
+                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+                <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
