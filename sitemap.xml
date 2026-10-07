@@ -3,46 +3,55 @@
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/</loc>
     <lastmod>2026-10-06</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/trendyol-komisyon-hesaplama.html</loc>
     <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/hepsiburada-komisyon-hesaplama.html</loc>
     <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/amazon-komisyon-hesaplama.html</loc>
     <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/n11-komisyon-hesaplama.html</loc>
     <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/sss.html</loc>
     <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://pazaryerihesaplama.vercel.app/iletisim.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
   </url>
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/gizlilik-politikasi.html</loc>
     <lastmod>2026-10-06</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
   <url>
     <loc>https://pazaryerihesaplama.vercel.app/kullanim-kosullari.html</loc>
     <lastmod>2026-10-06</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.30</priority>
-  </url>
-  <url>
-    <loc>https://pazaryerihesaplama.vercel.app/iletisim.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <priority>0.40</priority>
   </url>
 </urlset>
