@@ -17,7 +17,6 @@
       </a>
       <div class="flex flex-wrap justify-center gap-1.5 md:gap-3 text-xs md:text-sm font-semibold text-slate-600">
         <a href="index.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Tüm Pazaryerleri</a>
-        <!-- Trendyol Aktif (Turuncu) -->
         <a href="trendyol-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg bg-orange-50 text-orange-600 font-bold transition">Trendyol</a>
         <a href="hepsiburada-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Hepsiburada</a>
         <a href="amazon-komisyon-hesaplama.html" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 transition">Amazon TR</a>
@@ -107,6 +106,20 @@
         </div>
       </div>
     </section>
+
+    <!-- GERÇEK BİLGİLENDİRME -->
+    <article class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-slate-700 text-sm">
+      <h2 class="text-2xl font-bold text-slate-900">Güncel Trendyol Komisyon Oranları (2026)</h2>
+      <p>Trendyol mağazalarında satış kategorilerine göre değişkenlik gösteren 2026 komisyon oranları şu şekildedir:</p>
+      <ul class="list-disc pl-5 space-y-1">
+        <li><strong>Giyim & Aksesuar:</strong> %21</li>
+        <li><strong>Kozmetik & Kişisel Bakım:</strong> %17</li>
+        <li><strong>Ev & Yaşam:</strong> %19</li>
+        <li><strong>Elektronik Aksesuar:</strong> %15</li>
+        <li><strong>Ayakkabı & Çanta:</strong> %20</li>
+        <li><strong>Trendyol Pazaryeri Hizmet Bedeli:</strong> Satış başı alınan sabit hizmet kesintisidir.</li>
+      </ul>
+    </article>
   </main>
 
   <!-- JAVASCRIPT HESAPLAMA MANTIĞI -->
@@ -128,7 +141,6 @@
 
       const commissionTL = sell * (commRate / 100);
       
-      // KDV Hesaplamaları (KDV %20 Varsayılan)
       const vatOutput = sell - (sell / 1.20);
       const vatInput = (cost - (cost / 1.20)) + (commissionTL - (commissionTL / 1.20)) + (shipping - (shipping / 1.20)) + (serviceFee - (serviceFee / 1.20));
       const netVat = Math.max(0, vatOutput - vatInput);
@@ -145,7 +157,6 @@
       document.getElementById('resMargin').innerText = '%' + margin.toFixed(1);
     }
 
-    // İlk yüklemede çalıştır
     calculate();
   </script>
 </body>
